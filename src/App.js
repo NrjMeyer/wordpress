@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import firebase from './Firebase';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import Switch from '@material-ui/core/Switch';
+import Light from './light'
 
-function App() {
+export default function App() {
+  /*const [state, setState] = React.useState({
+    gilad: true,
+    jason: false,
+    antoine: true,
+  });
+  let lights = [];
+  const data = firebase.database().ref("lights");
+  data.on('value', (snapshot) =>{
+    let newLights = snapshot.val();
+    lights = newLights;
+    console.log(lights)
+  });
+  const handleChange = event => {
+    setState({ ...state, [event.target.name]: event.target.checked });
+  };*/
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Light/>
+    
   );
 }
 
-export default App;
